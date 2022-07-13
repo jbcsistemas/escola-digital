@@ -1,0 +1,48 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Entrar{% endblock title %}
+
+{% block main %}
+
+{% if form.errors %}
+<div class="container">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <i class="fa fa-exclamation-triangle mx-3" aria-hidden="true"></i>
+    Seu nome de usuário ou senha está incorreto. Tente novamente.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+{% endif %}
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="tela-login col-lg-5 col-md-8">
+
+      <div class="col my-4">
+        <center><h1>Bem-vindo(a)</h1></center>
+      </div>
+
+      <div class="col form-login mx-3">
+        <form action="{% url 'essencial:entrar' %}" method="post">
+          {% csrf_token %}
+
+          <div class="form-floating mb-3 mx-1">
+            {{ form.username }}
+            <label for="floatingUsuario">Nome de usuário</label>
+          </div>
+
+          <div class="form-floating mb-3 mx-1">
+            {{ form.password }}
+            <label for="floatingSenha">Senha</label>
+          </div>
+
+          <div class="row justify-content-center mb-5 mx-1">
+            <input type="submit" class="btn btn-primary btn-lg" value="Entrar">
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock main %}

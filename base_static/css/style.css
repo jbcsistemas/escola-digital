@@ -1,0 +1,16 @@
+.icone-painel {
+    background: coral;
+    width: 128px;
+    height: 128px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .tela-login {
+        border: 1px solid lightgrey;
+        border-radius: 8px;
+    }
+}
